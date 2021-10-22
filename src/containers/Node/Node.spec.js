@@ -1,39 +1,30 @@
 import React from 'react';
-import { shallow } from "enzyme";
-import configureStore from '../../store/index';
+import { Provider } from 'react-redux'
+import { mount } from "enzyme";
+import configureStore from '../../store';
 import Node from './Node';
 
 describe("Node component", () => {
-  const mock = jest.fn();
-
-  const nodes = {
-    list: [
-      {
-        url: 'https://thawing-springs-53971.herokuapp.com',
-        online: false,
-        name: 'Node 1',
-        loading: false
-      },
-      {
-        url: 'https://secret-lowlands-62331.herokuapp.com',
-        online: false,
-        name: 'Node 2',
-        loading: false
-      }
-    ]
+  const node = {
+    url: "https://localhost:3000",
+    online: false,
+    name: "Test",
+    loading: false
   };
 
+  const store = configureStore();
 
-
-  it("should render the component", () => {
-    const Wrapp = shallow(
-      <Node
-        node={nodes.list[0]}
-        key={nodes.list[0].url}
-        expanded={true}
-        toggleNodeExpanded={mock}
-      />
+  it("Should render the component", async () => {
+    const Wrapp = await mount(
+      <Provider store={store}>
+        <Node
+          node={node}
+          key={node.url}
+          expanded={true}
+          toggleNodeExpanded={Object}
+        />
+      </Provider>
     );
-    expect(Wrapp.text()).toEqual("https://thawing-springs-53971.herokuapp.com");
+    expect(Wrapp.text()).toContain("Testhttps://localhost:3000OFFLINELoading...");
   })
 })

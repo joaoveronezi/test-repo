@@ -23,7 +23,7 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => {
     blockState: state.blocks,
   }));
 
-  const { requestStatus } = useSelector((state) => ({ requestStatus: state.blocks.requestStatus }));
+  const { requestStatus } = useSelector((state) => ({ requestStatus: state.blocks?.requestStatus }));
 
   const toggleAndFetchNewData = () => {
     toggleNodeExpanded(node);
