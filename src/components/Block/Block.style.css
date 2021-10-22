@@ -1,0 +1,34 @@
+.block-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.12);
+  padding: 0 8px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.id-wrapper span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #304FFE;
+}
+
+.text-wrapper p {
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #263238;
+  margin: 0 0 4px 0;
+}
